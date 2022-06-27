@@ -1,0 +1,24 @@
+{% extends 'app_data/base.html' %}
+
+{% block content %}
+
+    <h1> REGISTRO DE MINISTROS </h1>
+    <p> Ingresa aquí datos sobre Ministros uruguayos </p>
+
+    {% if form.errors %}
+        <p> Error de validación, datos en el formulario incorrectos</p>
+    {% endif %}
+
+    <form action='{% url 'saveMinistro' %}' method='POST'>
+        {% csrf_token %}
+        
+        {% if check %}
+        <p> ¡Registro exitoso! </p>
+        {% endif %}
+
+        {{form}}
+            <button type="submit" class="btn btn-primary"> Guardar </button>
+    </form>
+
+
+{% endblock %}

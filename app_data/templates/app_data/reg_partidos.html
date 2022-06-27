@@ -1,0 +1,35 @@
+{% extends 'app_data/base.html' %}
+
+{% block content %}
+
+    <h1> BÚSQUEDA DE PARTIDOS POLÍTICOS </h1>
+    <p> Busca aquí información sobre Partidos Políticos uruguayos </p>
+
+    <form method='GET'>
+        <input type='text' placeholder='Buscar' name='Buscar' value='{{request.GET.busqueda}}'>
+        <button type='submit'> Buscar </button>
+
+    </form>
+
+    <table class='table table-striped'>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NOMBRE</th>
+                <th>FUNDACIÓN</th>
+                <th>ANTIGÜEDAD</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in registros %}
+                <tr>
+                    <th> {{i.id}}</th>
+                    <th> {{i.nombre}}</th>
+                    <th> {{i.fundacion}}</th>
+                    <th> {{i.antiguedad}}</th>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

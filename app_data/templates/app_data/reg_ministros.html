@@ -1,0 +1,39 @@
+{% extends 'app_data/base.html' %}
+
+{% block content %}
+
+    <h1> BÚSQUEDA DE MINISTROS </h1>
+    <p> Busca aquí información sobre Ministros uruguayos </p>
+
+    <form method='GET'>
+        <input type='text' placeholder='Buscar' name='Buscar' value='{{request.GET.busqueda}}'>
+        <button type='submit'> Buscar </button>
+
+    </form>
+
+    <table class='table table-striped'>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NOMBRE</th>
+                <th>APELLIDO</th>
+                <th>ASUME</th>
+                <th>FINALIZA</th>
+                <th>MINISTERIO</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in registros %}
+                <tr>
+                    <th> {{i.id}}</th>
+                    <th> {{i.nombre}}</th>
+                    <th> {{i.apellido}}</th>
+                    <th> {{i.asume_cargo}}</th>
+                    <th> {{i.deja_cargo}}</th>
+                    <th> {{i.cartera}}</th>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        
+        {% load static %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Entrega Coder</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static "app_views/assets/favicon.ico" %}" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static "app_views/css/styles.css" %}" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="d-flex" id="wrapper">
+            <!-- Sidebar-->
+            <div class="border-end bg-white" id="sidebar-wrapper">
+                <div class="sidebar-heading border-bottom bg-light">Entrega Coder</div>
+                <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href='{% url 'inicio' %}'>Inicio</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href='{% url 'presidente' %}'>Registrar Presidente</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href='{% url 'ministro' %}'>Registrar Ministro</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href='{% url 'partido' %}'>Registrar Partido</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href='{% url 'buscarpresidente' %}'>Buscar Presidente</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href='{% url 'buscarministro' %}'>Buscar Ministro</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href='{% url 'buscarpartido' %}'>Buscar Partido Político</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href='{% url 'sobremi' %}'>Sobre mí</a>
+                </div>
+            </div>
+            <!-- Page content wrapper-->
+            <div id="page-content-wrapper">
+                <!-- Top navigation-->
+                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                    <div class="container-fluid">
+                        <button class="btn btn-primary" id="sidebarToggle"> Contenidos </button>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    </div>
+                </nav>
+                <!-- Page content-->
+                <div class="container-fluid">
+
+                    {% block content %} {% endblock %}
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static "app_views/js/scripts.js" %}"></script>
+    </body>
+</html>
